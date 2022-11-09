@@ -1,1 +1,2 @@
-web: gunicorn gettingstarted.wsgi
+web: python bbot.py
+worker: python bbot.py
