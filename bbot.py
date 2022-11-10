@@ -25,6 +25,9 @@ def button_message(message):
 def get_text_messages(message):
     if message.text == 'qwe':
         bot.send_message(message.chat.id, 'Спасибо =)')
+    elif "бот" in message.text:
+        if "иди нахуй" in message.text:
+            bot.send_message(message.chat.id, 'Сам иди нахуй, чурка')
     elif message.text == 'автоферма в вк':
         bot.send_message(message.chat.id, 'vk.com/avtoferma')
     elif message.text == 'автоферма в телеграме!!!!':
