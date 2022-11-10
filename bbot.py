@@ -11,11 +11,13 @@ def huy(message):
 
 @bot.message_handler(commands=['bebra'])
 def button_message(message):
-    keyb = types.ReplyKeyboardMarkup(
-        one_time_keyboard=True, resize_keyboard=True)
-    k1 = types.KeyboardButton('автоферма в вк')
-    k2 = types.KeyboardButton('автоферма в телеграме!!!!')
-    keyb.add(k1, k2)
+    keyb = types.InlineKeyboardMarkup()
+    k1 = types.InlineKeyboardButton(
+        text='автоферма в вк', url='vk.com/avtoferma')
+    keyb.add(k1)
+    k2 = types.InlineKeyboardButton(
+        text='автоферма в телеграме!!!!', url='t.me/avtobebra')
+    keyb.add(k2)
     bot.send_message(message.chat.id, 'z', reply_markup=keyb)
 
 
@@ -27,8 +29,6 @@ def get_text_messages(message):
         bot.send_message(message.chat.id, 'vk.com/avtoferma')
     elif message.text == 'автоферма в телеграме!!!!':
         bot.send_message(message.chat.id, 't.me/avtobebra')
-    else:
-        bot.send_message(message.chat.id, 'принимаем только бебры')
 
 
 bot.get_updates()
