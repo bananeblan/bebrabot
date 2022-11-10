@@ -32,6 +32,8 @@ def get_text_messages(message):
         bot.send_message(message.chat.id, 'vk.com/avtoferma')
     elif message.text == 'автоферма в телеграме!!!!':
         bot.send_message(message.chat.id, 't.me/avtobebra')
+    elif 'дс' in message.text:
+        bot.send_message(message.chat.id, 'ща зайду')
 
 
 bot.get_updates()
